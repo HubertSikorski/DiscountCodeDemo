@@ -59,4 +59,17 @@ public class DiscountCodeServiceTests
         //Assert
         Assert.All(result.Codes, code => Assert.Equal(codeLength, code.Length));
     }
+
+    [Theory]
+    [InlineData(6)]
+    [InlineData(9)]
+    public async Task GenerateDiscountCodeAsync_ShouldReturnFalse_WhenCodeLengthIsOutOfRange(byte lenght)
+    {
+        //Act
+        var result = await _service.GenerateDiscountCodesAsync(5, lenght);
+        
+        //Assert
+        Assert.False(result.Result);
+        Assert.Empty(result.Codes);
+    }
 }

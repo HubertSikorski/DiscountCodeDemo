@@ -8,7 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add logic for discount code generation and unit tests">
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add more unit tests for code generation">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeServiceTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +36,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Client/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/tests/DiscountCodeDemo.UnitTests/DiscountCodeServiceTests.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
@@ -105,7 +108,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760523434203</updated>
-      <workItem from="1760523435405" duration="5846000" />
+      <workItem from="1760523435405" duration="7021000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -147,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760528997070</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add more unit tests for code generation">
+      <option name="closed" value="true" />
+      <created>1760529990640</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1760529990640</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +190,7 @@
     <MESSAGE value="Minimal implementation of Main in client and server" />
     <MESSAGE value="Add basic structure for code generation logic" />
     <MESSAGE value="Add logic for discount code generation and unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add logic for discount code generation and unit tests" />
+    <MESSAGE value="Add more unit tests for code generation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add more unit tests for code generation" />
   </component>
 </project>

@@ -5,6 +5,8 @@ namespace DiscountCodeDemo.Core.Services;
 
 public class DiscountCodeService : IDiscountCodeService
 {
+    private const byte MinLength = 7;
+    private const byte MaxLength = 8;
     private readonly HashSet<string> _discountCodes = new HashSet<string>();
     public async Task<GenerateResponse> GenerateDiscountCodesAsync(ushort count, byte length)
     {
@@ -13,6 +15,12 @@ public class DiscountCodeService : IDiscountCodeService
             Result = true,
             Codes = new List<string>()
         };
+
+        if (length is < MinLength or > MaxLength)
+        {
+            response.Result = false;
+            return await Task.FromResult(response);
+        }
 
         for (int i = 0; i < count; i++)
         {
