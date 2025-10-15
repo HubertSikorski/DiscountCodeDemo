@@ -8,13 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Minimal implementation of Main in client and server">
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/Dto/GenerateResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/Interfaces/IDiscountCodeService.cs" afterDir="false" />
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add basic structure for code generation logic">
+      <change afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeDemo.UnitTests.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeServiceTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/DiscountCodeDemo.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/DiscountCodeDemo.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DiscountCodeDemo.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DiscountCodeDemo.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscountCodeDemo.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DiscountCodeDemo.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760523434203</updated>
-      <workItem from="1760523435405" duration="3765000" />
+      <workItem from="1760523435405" duration="5246000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -136,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760525848995</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add basic structure for code generation logic">
+      <option name="closed" value="true" />
+      <created>1760527532950</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760527532950</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +173,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Set up the initial solution structure" />
     <MESSAGE value="Minimal implementation of Main in client and server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minimal implementation of Main in client and server" />
+    <MESSAGE value="Add basic structure for code generation logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add basic structure for code generation logic" />
   </component>
 </project>
