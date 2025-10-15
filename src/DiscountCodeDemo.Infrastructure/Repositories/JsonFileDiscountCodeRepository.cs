@@ -1,4 +1,5 @@
-﻿using DiscountCodeDemo.Core.Interfaces;
+﻿using System.Text.Json;
+using DiscountCodeDemo.Core.Interfaces;
 using DiscountCodeDemo.Core.Models;
 
 namespace DiscountCodeDemo.Infrastructure.Repositories;
@@ -7,6 +8,7 @@ public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
 {
     private readonly string _jsonFilePath;
     private readonly List<DiscountCodeEntity> _cache;
+    private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
 
     public JsonFileDiscountCodeRepository(string filePath)
     {
@@ -14,38 +16,114 @@ public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
         _cache = LoadFromFile();
     }
     
-    public Task<IEnumerable<DiscountCodeEntity>> GetALlAsync()
+    public async Task<IEnumerable<DiscountCodeEntity>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        await _semaphore.WaitAsync();
+        try
+        {
+            return _cache.Select(code => new DiscountCodeEntity
+            {
+                Code = code.Code,
+                IsUsed = code.IsUsed
+            }).ToList();
+        }
+        finally
+        {
+            _semaphore.Release();
+        }
     }
 
-    public Task<bool> ExistsAsync(string code)
+    public async Task<bool> ExistsAsync(string code)
     {
-        throw new NotImplementedException();
+        await _semaphore.WaitAsync();
+        try
+        {
+            return _cache.Any(c => c.Code == code);
+        }
+        finally
+        {
+            _semaphore.Release();
+        }
     }
 
-    public Task AddManyAsync(IEnumerable<DiscountCodeEntity> codeList)
+    public async Task AddManyAsync(IEnumerable<DiscountCodeEntity> codeList)
     {
-        throw new NotImplementedException();
+        await _semaphore.WaitAsync();
+        try
+        {
+            _cache.AddRange(codeList);
+        }
+        finally
+        {
+            _semaphore.Release();
+        }
     }
 
-    public Task<DiscountCodeEntity?> GetByCodeAsync(string code)
+    public async Task<DiscountCodeEntity?> GetByCodeAsync(string code)
     {
-        throw new NotImplementedException();
+        await _semaphore.WaitAsync();
+        try
+        {
+            var found = _cache.FirstOrDefault(c => c.Code == code);
+            if(found is null)
+                return null;
+
+            return new DiscountCodeEntity
+            {
+                Code = found.Code,
+                IsUsed = found.IsUsed
+            };
+        }
+        finally
+        {
+            _semaphore.Release();
+        }
     }
 
-    public Task<bool> MarkCodeAsUsedAsync(string code)
+    public async Task<bool> MarkCodeAsUsedAsync(string code)
     {
-        throw new NotImplementedException();
+        await _semaphore.WaitAsync();
+        try
+        {
+            var found = _cache.FirstOrDefault(c => c.Code == code);
+            if (found is null || found.IsUsed)
+                return false;
+            
+            found.IsUsed = true;
+            return true;
+        }
+        finally
+        {
+            _semaphore.Release();
+        }
     }
 
-    public Task SaveChangesAsync()
+    public async Task SaveChangesAsync()
     {
-        throw new NotImplementedException();
+        await _semaphore.WaitAsync();
+        try
+        {
+            var json = JsonSerializer.Serialize(_cache, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+            
+            await File.WriteAllTextAsync(_jsonFilePath, json);
+        }
+        finally
+        {
+            _semaphore.Release();
+        }
     }
     
     private List<DiscountCodeEntity> LoadFromFile()
     {
-        throw new NotImplementedException();
+        if (!File.Exists(_jsonFilePath))
+            return new List<DiscountCodeEntity>();
+        
+        var json = File.ReadAllText(_jsonFilePath);
+        
+        return JsonSerializer.Deserialize<List<DiscountCodeEntity>>(json)
+            ?? new List<DiscountCodeEntity>();
     }
 }

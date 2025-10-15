@@ -4,7 +4,7 @@ namespace DiscountCodeDemo.Core.Interfaces;
 
 public interface IDiscountCodeRepository
 {
-    Task<IEnumerable<DiscountCodeEntity>> GetALlAsync();
+    Task<IEnumerable<DiscountCodeEntity>> GetAllAsync();
     Task<bool> ExistsAsync(string code);
     Task AddManyAsync(IEnumerable<DiscountCodeEntity> codeList);
     Task<DiscountCodeEntity?> GetByCodeAsync(string code);
