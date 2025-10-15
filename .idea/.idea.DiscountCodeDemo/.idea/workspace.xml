@@ -8,14 +8,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Update repository logic add unit test">
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add more unit test for Discount Code Repository">
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/ServerHostedService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Interfaces/IDiscountCodeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Interfaces/IDiscountCodeService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DiscountCodeDemo.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DiscountCodeDemo.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/Repositories/JsonFileDiscountCodeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/Repositories/JsonFileDiscountCodeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeDemo.Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeDemo.Server.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeServiceTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,8 +47,10 @@
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/212760d42b6ac7f5778e2cb7bd6eec0eb5edc15575b9775855c7a77f8363/TCPClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Client/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Core/Dto/GenerateResponse.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/tests/DiscountCodeDemo.UnitTests/DiscountCodeServiceTests.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -51,6 +67,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Project.DiscountCodeDemo.Client.executor": "Run",
+    ".NET Project.DiscountCodeDemo.Server.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
@@ -62,7 +80,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Project.DiscountCodeDemo.Server">
+  <component name="RunManager" selected=".NET Project.DiscountCodeDemo.Client">
     <configuration name="DiscountCodeDemo.Client" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -108,7 +126,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760523434203</updated>
-      <workItem from="1760523435405" duration="16899000" />
+      <workItem from="1760523435405" duration="29716000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -214,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760540505692</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add more unit test for Discount Code Repository">
+      <option name="closed" value="true" />
+      <created>1760541908413</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1760541908413</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +280,104 @@
     <MESSAGE value="Add logic Discount Code Repository" />
     <MESSAGE value="fix typo in dto" />
     <MESSAGE value="Update repository logic add unit test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update repository logic add unit test" />
+    <MESSAGE value="Add more unit test for Discount Code Repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add more unit test for Discount Code Repository" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs</url>
+          <line>22</line>
+          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Core\Services\DiscountCodeService.cs" containingFunctionPresentation="Method 'GenerateDiscountCodesAsync'">
+            <startOffsets>
+              <option value="725" />
+            </startOffsets>
+            <endOffsets>
+              <option value="849" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs</url>
+          <line>73</line>
+          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Server\DiscountCodeTcpServer.cs" containingFunctionPresentation="Method 'HandleClientAsync'">
+            <startOffsets>
+              <option value="2029" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2065" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs</url>
+          <line>58</line>
+          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Server\DiscountCodeTcpServer.cs" containingFunctionPresentation="Method 'HandleClientAsync'">
+            <startOffsets>
+              <option value="1568" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1606" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs</url>
+          <line>35</line>
+          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Server\DiscountCodeTcpServer.cs" containingFunctionPresentation="Method 'AcceptClientAsync'">
+            <startOffsets>
+              <option value="949" />
+            </startOffsets>
+            <endOffsets>
+              <option value="969" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs</url>
+          <line>96</line>
+          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Server\DiscountCodeTcpServer.cs" containingFunctionPresentation="Method 'HandleUseCodeRequest'">
+            <startOffsets>
+              <option value="2684" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2709" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs</url>
+          <line>72</line>
+          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Core\Services\DiscountCodeService.cs" containingFunctionPresentation="Method 'UseCodesAsync'">
+            <startOffsets>
+              <option value="2096" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2186" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/Repositories/JsonFileDiscountCodeRepository.cs</url>
+          <line>86</line>
+          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Infrastructure\Repositories\JsonFileDiscountCodeRepository.cs" containingFunctionPresentation="Method 'MarkCodeAsUsedAsync'">
+            <startOffsets>
+              <option value="2103" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2144" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
