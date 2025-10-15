@@ -1,5 +1,5 @@
-﻿using DiscountCodeDemo.Infrastructure.Dto;
-using DiscountCodeDemo.Infrastructure.Interfaces;
+﻿using DiscountCodeDemo.Core.Dto;
+using DiscountCodeDemo.Core.Interfaces;
 
 namespace DiscountCodeDemo.Core.Services;
 

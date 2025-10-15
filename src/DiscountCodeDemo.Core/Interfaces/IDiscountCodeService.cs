@@ -1,6 +1,6 @@
-﻿using DiscountCodeDemo.Infrastructure.Dto;
+﻿using DiscountCodeDemo.Core.Dto;
 
-namespace DiscountCodeDemo.Infrastructure.Interfaces;
+namespace DiscountCodeDemo.Core.Interfaces;
 
 public interface IDiscountCodeService
 {
