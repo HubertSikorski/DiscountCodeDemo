@@ -5,11 +5,65 @@ namespace DiscountCodeDemo.UnitTests;
 
 public class JsonFileDiscountCodeRepositoryTests
 {
+    private string CreateTempFilePath() => Path.GetTempFileName();
+    
+    private JsonFileDiscountCodeRepository CreateRepository(string path) => 
+        new JsonFileDiscountCodeRepository(path);
+
+    [Fact]
+    public async Task AssManyAsync_ShouldAddCodes()
+    {
+        //Arrange
+        var jsonFilePath = CreateTempFilePath();
+        var repository = CreateRepository(jsonFilePath);
+
+        var codes = new List<DiscountCodeEntity>
+        {
+            new() { Code = "ABC1234", IsUsed = false },
+            new() { Code = "DEF1234", IsUsed = false },
+        };
+        
+        //Act
+        await repository.AddManyAsync(codes);
+        await repository.SaveChangesAsync();
+        
+        var all = (await repository.GetAllAsync()).ToList();
+        
+        //Assert
+        Assert.Equal(codes.Count, all.Count);
+        Assert.Contains(all, c => c.Code == "ABC1234");
+        Assert.Contains(all, c => c.Code == "DEF1234");
+    }
+
+    [Fact]
+    public async Task MarkCodeAsUsed_ShouldMarkCodeAsUsed()
+    {
+        //Arrange
+        var jsonFilePath = CreateTempFilePath();
+        var repository = CreateRepository(jsonFilePath);
+        const string testCode = "ABC1234";
+        
+        var code = new DiscountCodeEntity { Code = testCode, IsUsed = false };
+        
+        await repository.AddManyAsync(new[] { code });
+        await repository.SaveChangesAsync();
+        
+        //Act
+        var result = await repository.MarkCodeAsUsedAsync(testCode);
+        
+        //Assert
+        Assert.True(result);
+        var updated = await repository.GetByCodeAsync(testCode);
+        Assert.True(updated!.IsUsed);
+        
+        File.Delete(CreateTempFilePath());
+    }
+    
     [Fact]
     public async Task AddManyAsync_ShouldHandleConcurrentAccessWithoutDataLoss()
     {
         //Arange
-        var jsonFilePath = Path.GetTempFileName();
+        var jsonFilePath = CreateTempFilePath();
         var repository = new JsonFileDiscountCodeRepository(jsonFilePath);
 
         int totalTasks = 10;
