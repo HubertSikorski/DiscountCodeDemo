@@ -8,9 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="code cleanup">
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Interfaces/IDiscountCodeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/DiscountCodeDemo.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/DiscountCodeDemo.Core.csproj" afterDir="false" />
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add interface for discount codes repository">
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DiscountCodeDemo.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DiscountCodeDemo.Infrastructure.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +106,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760523434203</updated>
-      <workItem from="1760523435405" duration="8596000" />
+      <workItem from="1760523435405" duration="8968000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -173,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760532722058</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add interface for discount codes repository">
+      <option name="closed" value="true" />
+      <created>1760533097221</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1760533097221</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +215,7 @@
     <MESSAGE value="Add more unit tests for code generation" />
     <MESSAGE value="Add unit test to validate invalid code lengths" />
     <MESSAGE value="code cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="code cleanup" />
+    <MESSAGE value="Add interface for discount codes repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add interface for discount codes repository" />
   </component>
 </project>
