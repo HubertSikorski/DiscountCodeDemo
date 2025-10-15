@@ -8,11 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/DiscountCodeDemo.Core.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DiscountCodeDemo.Infrastructure.csproj" afterDir="false" />
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Minimal implementation of Main in client and server">
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/Dto/GenerateResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/Interfaces/IDiscountCodeService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscountCodeDemo.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DiscountCodeDemo.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/DiscountCodeDemo.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/DiscountCodeDemo.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DiscountCodeDemo.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DiscountCodeDemo.Infrastructure.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +36,10 @@
     "accountId": "1cc2ab47-def3-4ad4-aae9-f28772081eee"
   }
 }]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Client/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Server/Program.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
@@ -104,7 +110,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760523434203</updated>
-      <workItem from="1760523435405" duration="1926000" />
+      <workItem from="1760523435405" duration="3765000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -114,7 +120,23 @@
       <option name="project" value="LOCAL" />
       <updated>1760523553298</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Set up the initial solution structure">
+      <option name="closed" value="true" />
+      <created>1760525644955</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1760525644955</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Minimal implementation of Main in client and server">
+      <option name="closed" value="true" />
+      <created>1760525848995</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1760525848995</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +164,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Set up the initial solution structure" />
+    <MESSAGE value="Minimal implementation of Main in client and server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minimal implementation of Main in client and server" />
   </component>
 </project>

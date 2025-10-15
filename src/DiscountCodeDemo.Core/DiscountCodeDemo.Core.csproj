@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DiscountCodeDemo.Infrastructure\DiscountCodeDemo.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>
