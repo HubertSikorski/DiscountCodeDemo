@@ -7,13 +7,15 @@ namespace DiscountCodeDemo.Infrastructure.Repositories;
 public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
 {
     private readonly string _jsonFilePath;
-    private readonly List<DiscountCodeEntity> _cache;
     private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
 
+    private List<DiscountCodeEntity>? _cache;
+    private Task _initTask;
+    
     public JsonFileDiscountCodeRepository(string filePath)
     {
         _jsonFilePath = filePath;
-        _cache = LoadFromFile();
+        _initTask = InitializeAsync();
     }
     
     public async Task<IEnumerable<DiscountCodeEntity>> GetAllAsync()
@@ -115,13 +117,21 @@ public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
             _semaphore.Release();
         }
     }
+
+    private async Task InitializeAsync()
+    {
+        _cache = await LoadFromFileAsync();
+    }
     
-    private List<DiscountCodeEntity> LoadFromFile()
+    private async Task<List<DiscountCodeEntity>> LoadFromFileAsync()
     {
         if (!File.Exists(_jsonFilePath))
             return new List<DiscountCodeEntity>();
         
-        var json = File.ReadAllText(_jsonFilePath);
+        var json = await File.ReadAllTextAsync(_jsonFilePath);
+        
+        if(string.IsNullOrWhiteSpace(json))
+            return new List<DiscountCodeEntity>();
         
         return JsonSerializer.Deserialize<List<DiscountCodeEntity>>(json)
             ?? new List<DiscountCodeEntity>();
