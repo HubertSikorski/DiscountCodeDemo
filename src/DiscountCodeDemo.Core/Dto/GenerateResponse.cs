@@ -3,4 +3,4 @@
 public class GenerateResponse
 {
     public bool Result { get; set; }
-    public List<String> Codes { get; set; } = new List<string>(); }
+    public List<string> Codes { get; set; } = new List<string>(); }
