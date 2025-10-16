@@ -13,6 +13,8 @@ public static class DependencyInjection
             new JsonFileDiscountCodeRepository(jsonFilePath));
         
         services.AddScoped<IDiscountCodeService, DiscountCodeService>();
+        services.AddScoped<IDiscountCodeGenerator, DiscountCodeGenerator>();
+        services.AddScoped<IDiscountCodeValidator, DiscountCodeValidator>();
         
         return services;
     }

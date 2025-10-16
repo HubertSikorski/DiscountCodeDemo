@@ -6,16 +6,18 @@ namespace DiscountCodeDemo.Core.Services;
 
 public class DiscountCodeService : IDiscountCodeService
 {
-    private const byte MinLength = 7;
-    private const byte MaxLength = 8;
-    private const int MaxNumberOfCodes = 2000;
-    private const int MaxGenerationAttempts = 10000;
-    
     private readonly IDiscountCodeRepository _discountCodeRepository;
+    private readonly IDiscountCodeGenerator _discountCodeGenerator;
+    private readonly IDiscountCodeValidator _discountCodeValidator;
 
-    public DiscountCodeService(IDiscountCodeRepository discountCodeRepository)
+    public DiscountCodeService(
+        IDiscountCodeRepository discountCodeRepository,
+        IDiscountCodeGenerator discountCodeGenerator,
+        IDiscountCodeValidator discountCodeValidator)
     {
         _discountCodeRepository = discountCodeRepository;
+        _discountCodeGenerator = discountCodeGenerator;
+        _discountCodeValidator = discountCodeValidator;
     }
     
     public async Task<GenerateResponse> GenerateDiscountCodesAsync(ushort count, byte length)
@@ -26,29 +28,19 @@ public class DiscountCodeService : IDiscountCodeService
             Codes = new List<string>()
         };
 
-        if (length is < MinLength or > MaxLength || count == 0 || count > MaxNumberOfCodes)
+        if (!_discountCodeValidator.IsValidRequest(count, length))
         {
             response.Result = false;
             return await Task.FromResult(response);
         }
         
         var existingCodes = 
-            (await _discountCodeRepository.GetAllAsync()).Select(c => c.Code).ToHashSet();
+            (await _discountCodeRepository.GetAllAsync())
+            .Select(c => c.Code)
+            .ToHashSet();
 
-        var newCodes = new HashSet<string>();
-        int attempts = 0;
-
-        while (newCodes.Count < count && attempts < MaxGenerationAttempts)
-        {
-            var code = GenerateRandomCode(length);
-            attempts++;
-
-            if (!existingCodes.Contains(code) && existingCodes.Add(code))
-            {
-                newCodes.Add(code);
-                response.Codes.Add(code);
-            }
-        }
+        var newCodes = 
+            _discountCodeGenerator.GenerateCodes(existingCodes, count, length).ToList();
 
         if (newCodes.Count == 0)
         {
@@ -56,47 +48,31 @@ public class DiscountCodeService : IDiscountCodeService
             return response;
         }
 
-        var entities = newCodes.Select(c => new DiscountCodeEntity
+        var entities = newCodes.Select(code => new DiscountCodeEntity
         {
-            Code = c,
+            Code = code,
             IsUsed = false
         });
         
         await _discountCodeRepository.AddManyAsync(entities);
         await _discountCodeRepository.SaveChangesAsync();
-
+        
+        response.Codes.AddRange(newCodes);
         return response;
     }
 
     public async Task<bool> UseCodesAsync(string code)
     {
-        code = NormalizeCode(code);
+        var normalizedCode  = _discountCodeValidator.NormalizeCode(code);
         
-        if (string.IsNullOrWhiteSpace(code) || code.Length < MinLength || code.Length > MaxLength)
+        if (!_discountCodeValidator.IsValidCode(normalizedCode))
             return false;
 
-        var success = await _discountCodeRepository.MarkCodeAsUsedAsync(code);
+        var success = await _discountCodeRepository.MarkCodeAsUsedAsync(normalizedCode);
         
         if(success)
             await _discountCodeRepository.SaveChangesAsync();
         
         return success;
-    }
-
-    private string GenerateRandomCode(byte length)
-    {
-        const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        
-        var random = new Random();
-        var code = new string(Enumerable.Range(0, length)
-            .Select(c => validChars[random.Next(validChars.Length)])
-            .ToArray());
-
-        return code;
-    }
-
-    private string NormalizeCode(string? code)
-    {
-        return code?.Trim('\0', ' ', '\r', '\n') ?? string.Empty;
     }
 }
