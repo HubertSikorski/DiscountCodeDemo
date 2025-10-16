@@ -9,7 +9,7 @@ public class DiscountCodeValidator : IDiscountCodeValidator
     private const int MaxNumberOfCodes = 2000;
     
     public string NormalizeCode(string? code) =>
-        code?.Trim('\0', ' ', '\r', '\n') ?? string.Empty;
+        code?.Trim('\0', ' ', '\t', '\r', '\n') ?? string.Empty;
 
     public bool IsValidCode(string code)
     {

@@ -8,14 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="code cleanup">
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Interfaces/IDiscountCodeGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeValidator.cs" afterDir="false" />
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Refactor Discount Code Service">
+      <change afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeGeneratorTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Interfaces/IDiscountCodeValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Interfaces/IDiscountCodeValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeValidatorTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeValidatorTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1760523434203</updated>
       <workItem from="1760523435405" duration="30071000" />
-      <workItem from="1760602429152" duration="6764000" />
+      <workItem from="1760602429152" duration="9581000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -247,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760609468752</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Refactor Discount Code Service">
+      <option name="closed" value="true" />
+      <created>1760618827822</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1760618827822</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +295,8 @@
     <MESSAGE value="Add more unit test for Discount Code Repository" />
     <MESSAGE value="Add mvp server and client" />
     <MESSAGE value="code cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="code cleanup" />
+    <MESSAGE value="Refactor Discount Code Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Discount Code Service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
