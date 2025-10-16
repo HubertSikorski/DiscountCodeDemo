@@ -1,4 +1,4 @@
-﻿namespace DiscountCodeDemo.Server.Protocol.Messages;
+﻿namespace DiscountCodeDemo.Protocol.Messages;
 
 public interface IProtocolMessage
 {

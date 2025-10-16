@@ -1,6 +1,6 @@
-﻿namespace DiscountCodeDemo.Server.Protocol;
+﻿namespace DiscountCodeDemo.Protocol;
 
-public class ProtocolConstants
+public static class ProtocolConstants
 {
     public const byte MinCodeLength = 7;
     public const byte MaxCodeLength = 8;

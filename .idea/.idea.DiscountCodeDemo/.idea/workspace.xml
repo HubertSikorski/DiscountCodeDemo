@@ -8,24 +8,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add MessageReader and MessageWriter for custom TCP protocol">
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/ErrorResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/ErrorType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/ProtocolMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Tcp/ClientSession.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Tcp/DiscountCodeTcpServer.cs" afterDir="false" />
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/Tcp/DiscountCodeClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/DiscountCodeDemo.Protocol.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/IProtocolMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/IProtocolMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/RequestType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/RequestType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/ServerHostedService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/ServerHostedService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscountCodeDemo.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DiscountCodeDemo.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/DiscountCodeDemo.Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/DiscountCodeDemo.Client.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeDemo.Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeDemo.Server.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/MessageReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/MessageWriter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/ErrorResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/ErrorResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/ErrorType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/ErrorType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/GenerateRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/GenerateResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/IProtocolMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/IProtocolMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/RequestType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/RequestType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/UseCodeRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/UseCodeResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/ProtocolConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/ProtocolConstants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/ProtocolMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/ProtocolMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Tcp/ClientSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Tcp/ClientSession.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +61,8 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/212760d42b6ac7f5778e2cb7bd6eec0eb5edc15575b9775855c7a77f8363/TCPClient.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Core/Dto/GenerateResponse.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Core/Dto/GenerateResponse.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3e7e579177776b74c89be1aca574845d699c86445d66d72e72ba8467e08fcb/BitConverter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d1287462d4ec4078c61b8e92a0952fb7de3e7e877d279e390a4c136a6365126/Stream.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -137,6 +138,8 @@
       <updated>1760523434203</updated>
       <workItem from="1760523435405" duration="30071000" />
       <workItem from="1760602429152" duration="17528000" />
+      <workItem from="1760639540266" duration="160000" />
+      <workItem from="1760639905605" duration="1573000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -322,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760634584774</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Server Refactor add session">
+      <option name="closed" value="true" />
+      <created>1760637640125</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1760637640125</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,6 +393,39 @@
     <MESSAGE value="Add request type enum and constants for validation" />
     <MESSAGE value="Add message types and protocol structure" />
     <MESSAGE value="Add MessageReader and MessageWriter for custom TCP protocol" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add MessageReader and MessageWriter for custom TCP protocol" />
+    <MESSAGE value="Server Refactor add session" />
+    <option name="LAST_COMMIT_MESSAGE" value="Server Refactor add session" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Client/Tcp/DiscountCodeClient.cs</url>
+          <line>22</line>
+          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Client\Tcp\DiscountCodeClient.cs" containingFunctionPresentation="Method 'GenerateAsync'">
+            <startOffsets>
+              <option value="711" />
+            </startOffsets>
+            <endOffsets>
+              <option value="760" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/Tcp/DiscountCodeTcpServer.cs</url>
+          <line>34</line>
+          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Server\Tcp\DiscountCodeTcpServer.cs" containingFunctionPresentation="Method 'AcceptClientsAsync'">
+            <startOffsets>
+              <option value="973" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1506" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

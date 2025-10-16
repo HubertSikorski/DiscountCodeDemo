@@ -1,6 +1,6 @@
-﻿using DiscountCodeDemo.Server.Protocol.Messages;
+﻿using DiscountCodeDemo.Protocol.Messages;
 
-namespace DiscountCodeDemo.Server.Protocol;
+namespace DiscountCodeDemo.Protocol;
 
 public class ProtocolMessage
 {

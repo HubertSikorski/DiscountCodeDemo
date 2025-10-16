@@ -10,6 +10,7 @@
     <ItemGroup>
       <ProjectReference Include="..\DiscountCodeDemo.Core\DiscountCodeDemo.Core.csproj" />
       <ProjectReference Include="..\DiscountCodeDemo.Infrastructure\DiscountCodeDemo.Infrastructure.csproj" />
+      <ProjectReference Include="..\DiscountCodeDemo.Protocol\DiscountCodeDemo.Protocol.csproj" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,124 +1,113 @@
 ﻿using System.Net.Sockets;
-using System.Text;
 using DiscountCodeDemo.Core.Interfaces;
-using DiscountCodeDemo.Server.Protocol;
-using DiscountCodeDemo.Server.Protocol.Messages;
+using DiscountCodeDemo.Protocol;
+using DiscountCodeDemo.Protocol.Messages;
 
-namespace DiscountCodeDemo.Server.Tcp
+namespace DiscountCodeDemo.Server.Tcp;
+
+public class ClientSession
 {
-    public class ClientSession
+    private readonly TcpClient _client;
+    private readonly IDiscountCodeService _discountCodeService;
+
+    public ClientSession(TcpClient client, IDiscountCodeService discountCodeService)
     {
-        private readonly TcpClient _client;
-        private readonly IDiscountCodeService _discountCodeService;
+        _client = client;
+        _discountCodeService = discountCodeService;
+    }
 
-        public ClientSession(TcpClient client, IDiscountCodeService discountCodeService)
+    public async Task ProcessAsync()
+    {
+        try
         {
-            _client = client;
-            _discountCodeService = discountCodeService;
-        }
+            using var stream = _client.GetStream();
+            var reader = new MessageReader(stream);
+            var writer = new MessageWriter(stream);
 
-        public async Task ProcessAsync()
-        {
-            try
+            while (true)
             {
-                using var stream = _client.GetStream();
-
-                while (true)
+                var message = await reader.ReadMessageAsync();
+                if (message == null)
                 {
-                    var commandBuffer = new byte[1];
-                    int bytesRead = await stream.ReadAsync(commandBuffer, 0, 1);
-                    if (bytesRead == 0)
-                        break;
+                    Console.WriteLine("[ClientSession] Connection closed by client.");
+                    break;
+                }
 
-                    byte command = commandBuffer[0];
-                    switch (command)
-                    {
-                        case (byte)RequestType.Generate:
-                            await HandleGenerateRequest(stream);
-                            break;
-                        case (byte)RequestType.Use:
-                            await HandleUseCodeRequest(stream);
-                            break;
-                        default:
-                            Console.WriteLine("[ClientSession] Unknown command received.");
-                            return;
-                    }
+                switch (message.Command)
+                {
+                    case RequestType.Generate:
+                        await HandleGenerateRequest(writer, message.Payload);
+                        break;
+                    case RequestType.Use:
+                        await HandleUseCodeRequest(writer, message.Payload);
+                        break;
+                    default:
+                        Console.WriteLine("[ClientSession] Unknown command.");
+                        return;
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"[ClientSession] Exception: {ex.Message}");
-            }
-            finally
-            {
-                _client.Close();
-            }
         }
-
-        private async Task HandleUseCodeRequest(NetworkStream stream)
+        catch (Exception ex)
         {
-            var buffer = new byte[8];
-            int bytesRead = 0;
-
-            while (bytesRead < 8)
-            {
-                int n = await stream.ReadAsync(buffer, bytesRead, 8 - bytesRead);
-                if (n == 0)
-                    throw new Exception("Connection closed while reading UseCodeRequest");
-                bytesRead += n;
-            }
-
-            string code = Encoding.ASCII.GetString(buffer);
-
-            Console.WriteLine($"[ClientSession] UseCode request received: {code}");
-
-            bool success = await _discountCodeService.UseCodesAsync(code);
-
-            byte resultCode = success ? (byte)1 : (byte)0;
-
-            await SendUseCodeResponse(stream, resultCode);
+            Console.WriteLine($"[ClientSession] Exception: {ex.Message}");
         }
-
-        private async Task HandleGenerateRequest(NetworkStream stream)
+        finally
         {
-            var buffer = new byte[3];
-            int bytesRead = 0;
-
-            while (bytesRead < 3)
-            {
-                int n = await stream.ReadAsync(buffer, bytesRead, 3 - bytesRead);
-                if (n == 0)
-                    throw new Exception("Connection closed while reading GenerateRequest");
-                bytesRead += n;
-            }
-
-            ushort count = BitConverter.ToUInt16(buffer, 0);
-            byte length = buffer[2];
-
-            Console.WriteLine($"[ClientSession] Generate request received: {count} codes, Length: {length}");
-
-            if (count == 0 || count > ProtocolConstants.MaxCodeCount || length < ProtocolConstants.MinCodeLength || length > ProtocolConstants.MaxCodeLength)
-            {
-                Console.WriteLine("[ClientSession] Invalid request parameters");
-                await SendGenerateResponse(stream, false);
-                return;
-            }
-
-            var response = await _discountCodeService.GenerateDiscountCodesAsync(count, length);
-            await SendGenerateResponse(stream, response.Result);
+            _client.Close();
         }
+    }
 
-        private async Task SendUseCodeResponse(NetworkStream stream, byte resultCode)
+    private async Task HandleGenerateRequest(MessageWriter writer, byte[] payload)
+    {
+        GenerateRequest request;
+        try
         {
-            await stream.WriteAsync(new byte[] { resultCode }, 0, 1);
-            Console.WriteLine($"[ClientSession] UseCode response sent: {resultCode}");
+            request = GenerateRequest.FromBytes(payload);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[ClientSession] Failed to parse GenerateRequest: {ex.Message}");
+            await writer.WriteMessageAsync(new GenerateResponse(0));
+            return;
         }
 
-        private async Task SendGenerateResponse(NetworkStream stream, bool success)
+        Console.WriteLine($"[ClientSession] Generate request received: {request.Count} codes, Length: {request.Length}");
+
+        if (request.Count == 0 || request.Count > ProtocolConstants.MaxCodeCount ||
+            request.Length < ProtocolConstants.MinCodeLength || request.Length > ProtocolConstants.MaxCodeLength)
         {
-            byte resultByte = success ? (byte)1 : (byte)0;
-            await stream.WriteAsync(new byte[] { resultByte }, 0, 1);
-            Console.WriteLine($"[ClientSession] Generate response sent: {success}");
+            Console.WriteLine("[ClientSession] Invalid request parameters");
+            await writer.WriteMessageAsync(new GenerateResponse(0));
+            return;
         }
+
+        var response = await _discountCodeService.GenerateDiscountCodesAsync(request.Count, request.Length);
+        byte resultByte = response.Result ? (byte)1 : (byte)0;
+
+        await writer.WriteMessageAsync(new GenerateResponse(resultByte));
+        Console.WriteLine($"[ClientSession] Generate response sent: {resultByte}");
+    }
+
+    private async Task HandleUseCodeRequest(MessageWriter writer, byte[] payload)
+    {
+        UseCodeRequest request;
+        try
+        {
+            request = UseCodeRequest.FromBytes(payload);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[ClientSession] Failed to parse UseCodeRequest: {ex.Message}");
+            await writer.WriteMessageAsync(new UseCodeResponse(0));
+            return;
+        }
+
+        Console.WriteLine($"[ClientSession] UseCode request received: {request.Code}");
+
+        bool success = await _discountCodeService.UseCodesAsync(request.Code);
+        byte resultByte = success ? (byte)1 : (byte)0;
+
+        await writer.WriteMessageAsync(new UseCodeResponse(resultByte));
+        Console.WriteLine($"[ClientSession] UseCode response sent: {resultByte}");
     }
 }

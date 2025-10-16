@@ -1,4 +1,4 @@
-﻿using DiscountCodeDemo.Server.Protocol.Messages;
+﻿using DiscountCodeDemo.Protocol.Messages;
 
 public class ErrorResponse : IProtocolMessage
 {
