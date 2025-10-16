@@ -10,10 +10,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Update unit tests for JsonFileDiscountCodeRepository">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Dto/GenerateResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Dto/GenerateResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/Repositories/JsonFileDiscountCodeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/Repositories/JsonFileDiscountCodeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeDemo.Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeDemo.Server.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +21,11 @@
     <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -41,6 +43,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/212760d42b6ac7f5778e2cb7bd6eec0eb5edc15575b9775855c7a77f8363/TCPClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Core/Dto/GenerateResponse.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Core/Dto/GenerateResponse.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" root0="SKIP_HIGHLIGHTING" />
@@ -56,21 +59,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.DiscountCodeDemo.Client.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Project.DiscountCodeDemo.Server.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.DiscountCodeDemo.Client.executor": "Run",
+    ".NET Project.DiscountCodeDemo.Server.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Add-protocol-to-Server",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Project.DiscountCodeDemo.Client">
     <configuration name="DiscountCodeDemo.Client" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -297,6 +300,17 @@
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
                   <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Add-protocol-to-Server" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>
