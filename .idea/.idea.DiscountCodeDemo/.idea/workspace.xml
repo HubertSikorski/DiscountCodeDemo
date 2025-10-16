@@ -9,27 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/Tcp/DiscountCodeClient.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/DiscountCodeDemo.Protocol.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/DiscountCodeProtocol.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiscountCodeDemo.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DiscountCodeDemo.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/DiscountCodeDemo.Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/DiscountCodeDemo.Client.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Client/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeDemo.Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeDemo.Server.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/MessageReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/MessageWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/ErrorResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/ErrorResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/ErrorType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/ErrorType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/GenerateRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/GenerateResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/IProtocolMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/IProtocolMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/RequestType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/RequestType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/UseCodeRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/Messages/UseCodeResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/ProtocolConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/ProtocolConstants.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/ProtocolMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Protocol/ProtocolMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Tcp/ClientSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Tcp/ClientSession.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +62,7 @@
     ".NET Project.DiscountCodeDemo.Client.executor": "Run",
     ".NET Project.DiscountCodeDemo.Server.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Add-protocol-to-Server",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

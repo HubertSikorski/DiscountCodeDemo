@@ -16,6 +16,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountCodeDemo.UnitTests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountCodeDemo.Protocol", "src\DiscountCodeDemo.Protocol\DiscountCodeDemo.Protocol.csproj", "{B2F144C1-3ED3-44AD-9152-8460A63016E6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F16B8698-515A-4C83-A893-844AAE9BCE33}"
+	ProjectSection(SolutionItems) = preProject
+		docs\DiscountCodeProtocol.md = docs\DiscountCodeProtocol.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
