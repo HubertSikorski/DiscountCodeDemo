@@ -81,20 +81,16 @@ public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
             _semaphore.Release();
         }
     }
+    
     public async Task<bool> MarkCodeAsUsedAsync(string code)
     {
-        // Sanitize the input code
-        code = code?.Trim('\0', ' ', '\r', '\n');
-
         await _semaphore.WaitAsync();
         try
         {
-            var found = _cache.FirstOrDefault(c =>
-                string.Equals(c.Code?.Trim('\0', ' ', '\r', '\n'), code, StringComparison.OrdinalIgnoreCase));
-
+            var found = _cache.FirstOrDefault(c => c.Code == code);
             if (found is null || found.IsUsed)
                 return false;
-
+            
             found.IsUsed = true;
             return true;
         }
@@ -103,25 +99,6 @@ public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
             _semaphore.Release();
         }
     }
-
-
-    // public async Task<bool> MarkCodeAsUsedAsync(string code)
-    // {
-    //     await _semaphore.WaitAsync();
-    //     try
-    //     {
-    //         var found = _cache.FirstOrDefault(c => c.Code == code);
-    //         if (found is null || found.IsUsed)
-    //             return false;
-    //         
-    //         found.IsUsed = true;
-    //         return true;
-    //     }
-    //     finally
-    //     {
-    //         _semaphore.Release();
-    //     }
-    // }
 
     public async Task SaveChangesAsync()
     {

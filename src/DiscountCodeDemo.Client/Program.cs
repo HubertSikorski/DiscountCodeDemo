@@ -68,7 +68,7 @@ namespace DiscountCodeDemo.Client
             await client.ConnectAsync(host, port);
             using NetworkStream stream = client.GetStream();
 
-            // Buffer: [0x01][count low byte][count high byte][length]
+ 
             byte[] buffer = new byte[4];
             buffer[0] = 0x01;
             buffer[1] = (byte)(count & 0xFF);
@@ -77,7 +77,7 @@ namespace DiscountCodeDemo.Client
 
             await stream.WriteAsync(buffer, 0, buffer.Length);
 
-            // Read 1 byte response (0x01 = success, 0x00 = failure)
+
             int response = await stream.ReadByteAsync();
             if (response == 0x01)
                 Console.WriteLine("Discount codes generated successfully.");
@@ -101,7 +101,7 @@ namespace DiscountCodeDemo.Client
             await client.ConnectAsync(host, port);
             using NetworkStream stream = client.GetStream();
 
-            // Buffer: [0x02][code ASCII bytes][0x00 terminator]
+
             byte[] buffer = new byte[1 + codeBytes.Length + 1];
             buffer[0] = 0x02;
             Array.Copy(codeBytes, 0, buffer, 1, codeBytes.Length);
@@ -109,7 +109,7 @@ namespace DiscountCodeDemo.Client
 
             await stream.WriteAsync(buffer, 0, buffer.Length);
 
-            // Read 1 byte response (0x01 = success, 0x00 = failure)
+
             int response = await stream.ReadByteAsync();
             if (response == 0x01)
                 Console.WriteLine("Discount code used successfully.");

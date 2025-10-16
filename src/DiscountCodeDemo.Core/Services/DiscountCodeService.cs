@@ -70,6 +70,8 @@ public class DiscountCodeService : IDiscountCodeService
 
     public async Task<bool> UseCodesAsync(string code)
     {
+        code = NormalizeCode(code);
+        
         if (string.IsNullOrWhiteSpace(code) || code.Length < MinLength || code.Length > MaxLength)
             return false;
 
@@ -91,5 +93,10 @@ public class DiscountCodeService : IDiscountCodeService
             .ToArray());
 
         return code;
+    }
+
+    private string NormalizeCode(string? code)
+    {
+        return code?.Trim('\0', ' ', '\r', '\n') ?? string.Empty;
     }
 }
