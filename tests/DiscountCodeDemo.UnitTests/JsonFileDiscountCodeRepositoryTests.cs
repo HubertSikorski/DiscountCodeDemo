@@ -6,16 +6,20 @@ namespace DiscountCodeDemo.UnitTests;
 public class JsonFileDiscountCodeRepositoryTests
 {
     private string CreateTempFilePath() => Path.GetTempFileName();
-    
-    private JsonFileDiscountCodeRepository CreateRepository(string path) => 
-        new JsonFileDiscountCodeRepository(path);
+
+    private async Task<JsonFileDiscountCodeRepository> CreateRepository(string path)
+    {
+        var repository = new JsonFileDiscountCodeRepository(path);
+        await Task.Delay(50);
+        return repository;
+    }
 
     [Fact]
     public async Task AssManyAsync_ShouldAddCodes()
     {
         //Arrange
         var jsonFilePath = CreateTempFilePath();
-        var repository = CreateRepository(jsonFilePath);
+        var repository = await CreateRepository(jsonFilePath);
 
         var codes = new List<DiscountCodeEntity>
         {
@@ -40,7 +44,7 @@ public class JsonFileDiscountCodeRepositoryTests
     {
         //Arrange
         var jsonFilePath = CreateTempFilePath();
-        var repository = CreateRepository(jsonFilePath);
+        var repository = await CreateRepository(jsonFilePath);
         const string testCode = "ABC1234";
         
         var code = new DiscountCodeEntity { Code = testCode, IsUsed = false };

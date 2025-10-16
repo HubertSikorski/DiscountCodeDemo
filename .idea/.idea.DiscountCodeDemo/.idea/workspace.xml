@@ -8,10 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add unit tests for code validator and code generator">
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Update unit tests for DiscountCodeService">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeDemo.UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeDemo.UnitTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeServiceTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1760523434203</updated>
       <workItem from="1760523435405" duration="30071000" />
-      <workItem from="1760602429152" duration="11911000" />
+      <workItem from="1760602429152" duration="13303000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -259,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760622530433</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Update unit tests for DiscountCodeService">
+      <option name="closed" value="true" />
+      <created>1760624848846</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1760624848846</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +310,8 @@
     <MESSAGE value="code cleanup" />
     <MESSAGE value="Refactor Discount Code Service" />
     <MESSAGE value="Add unit tests for code validator and code generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add unit tests for code validator and code generator" />
+    <MESSAGE value="Update unit tests for DiscountCodeService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update unit tests for DiscountCodeService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
