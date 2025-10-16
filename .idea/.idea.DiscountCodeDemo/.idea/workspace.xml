@@ -8,8 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Update unit tests for DiscountCodeService">
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Update unit tests for JsonFileDiscountCodeRepository">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Dto/GenerateResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Dto/GenerateResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/Repositories/JsonFileDiscountCodeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Infrastructure/Repositories/JsonFileDiscountCodeRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +40,10 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/212760d42b6ac7f5778e2cb7bd6eec0eb5edc15575b9775855c7a77f8363/TCPClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/src/DiscountCodeDemo.Core/Dto/GenerateResponse.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/huber/RiderProjects/DiscountCodeDemo/tests/DiscountCodeDemo.UnitTests/JsonFileDiscountCodeRepositoryTests.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -112,7 +118,7 @@
       <option name="presentableId" value="Default" />
       <updated>1760523434203</updated>
       <workItem from="1760523435405" duration="30071000" />
-      <workItem from="1760602429152" duration="13303000" />
+      <workItem from="1760602429152" duration="17528000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -266,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760624848846</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Update unit tests for JsonFileDiscountCodeRepository">
+      <option name="closed" value="true" />
+      <created>1760625523655</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1760625523655</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,24 +325,12 @@
     <MESSAGE value="Refactor Discount Code Service" />
     <MESSAGE value="Add unit tests for code validator and code generator" />
     <MESSAGE value="Update unit tests for DiscountCodeService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update unit tests for DiscountCodeService" />
+    <MESSAGE value="Update unit tests for JsonFileDiscountCodeRepository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update unit tests for JsonFileDiscountCodeRepository" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs</url>
-          <line>73</line>
-          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Server\DiscountCodeTcpServer.cs" containingFunctionPresentation="Method 'HandleClientAsync'">
-            <startOffsets>
-              <option value="2029" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2065" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs</url>
           <line>58</line>

@@ -8,7 +8,6 @@ public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
 {
     private readonly string _jsonFilePath;
     private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
-
     private List<DiscountCodeEntity>? _cache;
     private Task _initTask;
     
@@ -20,6 +19,7 @@ public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
     
     public async Task<IEnumerable<DiscountCodeEntity>> GetAllAsync()
     {
+        await _initTask;
         await _semaphore.WaitAsync();
         try
         {
@@ -37,6 +37,7 @@ public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
 
     public async Task<bool> ExistsAsync(string code)
     {
+        await _initTask;
         await _semaphore.WaitAsync();
         try
         {
@@ -50,10 +51,25 @@ public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
 
     public async Task AddManyAsync(IEnumerable<DiscountCodeEntity> codeList)
     {
+        await _initTask;
         await _semaphore.WaitAsync();
         try
         {
-            _cache.AddRange(codeList);
+            var existingCodes = _cache.Select(code => code.Code).ToHashSet();
+            
+            foreach (var code in codeList)
+            {
+                if (!existingCodes.Contains(code.Code))
+                {
+                    _cache.Add(new DiscountCodeEntity
+                    {
+                        Code = code.Code,
+                        IsUsed = code.IsUsed
+                    });
+                }
+                
+                existingCodes.Add(code.Code);
+            }
         }
         finally
         {
@@ -84,6 +100,7 @@ public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
     
     public async Task<bool> MarkCodeAsUsedAsync(string code)
     {
+        await _initTask;
         await _semaphore.WaitAsync();
         try
         {
@@ -102,6 +119,7 @@ public class JsonFileDiscountCodeRepository : IDiscountCodeRepository
 
     public async Task SaveChangesAsync()
     {
+        await _initTask;
         await _semaphore.WaitAsync();
         try
         {

@@ -10,7 +10,7 @@ public class JsonFileDiscountCodeRepositoryTests
     private async Task<JsonFileDiscountCodeRepository> CreateRepository(string path)
     {
         var repository = new JsonFileDiscountCodeRepository(path);
-        await Task.Delay(50);
+        await repository.GetAllAsync();
         return repository;
     }
 
@@ -37,6 +37,8 @@ public class JsonFileDiscountCodeRepositoryTests
         Assert.Equal(codes.Count, all.Count);
         Assert.Contains(all, c => c.Code == "ABC1234");
         Assert.Contains(all, c => c.Code == "DEF1234");
+        
+        File.Delete(jsonFilePath);
     }
 
     [Fact]
@@ -60,7 +62,7 @@ public class JsonFileDiscountCodeRepositoryTests
         var updated = await repository.GetByCodeAsync(testCode);
         Assert.True(updated!.IsUsed);
         
-        File.Delete(CreateTempFilePath());
+        File.Delete(jsonFilePath);
     }
     
     [Fact]
