@@ -8,12 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add request type enum and constants for validation">
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/IProtocolMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeResponse.cs" afterDir="false" />
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add message types and protocol structure">
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageReader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageWriter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -295,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760632042679</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add message types and protocol structure">
+      <option name="closed" value="true" />
+      <created>1760632752434</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1760632752434</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +358,8 @@
     <MESSAGE value="Update unit tests for DiscountCodeService" />
     <MESSAGE value="Update unit tests for JsonFileDiscountCodeRepository" />
     <MESSAGE value="Add request type enum and constants for validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add request type enum and constants for validation" />
+    <MESSAGE value="Add message types and protocol structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add message types and protocol structure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
