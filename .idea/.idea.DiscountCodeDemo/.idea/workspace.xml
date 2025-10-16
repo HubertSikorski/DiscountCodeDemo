@@ -8,12 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Refactor Discount Code Service">
-      <change afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeGeneratorTests.cs" afterDir="false" />
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add unit tests for code validator and code generator">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DiscountCodeDemo.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Core/Services/DiscountCodeValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeValidatorTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeValidatorTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeDemo.UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeDemo.UnitTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DiscountCodeDemo.UnitTests/DiscountCodeServiceTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +113,7 @@
       <option name="presentableId" value="Default" />
       <updated>1760523434203</updated>
       <workItem from="1760523435405" duration="30071000" />
-      <workItem from="1760602429152" duration="9581000" />
+      <workItem from="1760602429152" duration="11911000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -253,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760618827822</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add unit tests for code validator and code generator">
+      <option name="closed" value="true" />
+      <created>1760622530433</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1760622530433</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +302,8 @@
     <MESSAGE value="Add mvp server and client" />
     <MESSAGE value="code cleanup" />
     <MESSAGE value="Refactor Discount Code Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor Discount Code Service" />
+    <MESSAGE value="Add unit tests for code validator and code generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add unit tests for code validator and code generator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
