@@ -8,10 +8,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add message types and protocol structure">
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageReader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageWriter.cs" afterDir="false" />
+    <list default="true" id="bd06e891-30cb-485e-b991-9bf95dadc711" name="Changes" comment="Add MessageReader and MessageWriter for custom TCP protocol">
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/ErrorResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/ErrorType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/ProtocolMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Tcp/ClientSession.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Tcp/DiscountCodeTcpServer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DiscountCodeDemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/MessageWriter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/GenerateResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/IProtocolMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/IProtocolMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/RequestType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/RequestType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/Protocol/Messages/UseCodeResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/ServerHostedService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiscountCodeDemo.Server/ServerHostedService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760632752434</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add MessageReader and MessageWriter for custom TCP protocol">
+      <option name="closed" value="true" />
+      <created>1760634584774</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1760634584774</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,51 +381,7 @@
     <MESSAGE value="Update unit tests for JsonFileDiscountCodeRepository" />
     <MESSAGE value="Add request type enum and constants for validation" />
     <MESSAGE value="Add message types and protocol structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add message types and protocol structure" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs</url>
-          <line>58</line>
-          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Server\DiscountCodeTcpServer.cs" containingFunctionPresentation="Method 'HandleClientAsync'">
-            <startOffsets>
-              <option value="1568" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1606" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs</url>
-          <line>35</line>
-          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Server\DiscountCodeTcpServer.cs" containingFunctionPresentation="Method 'AcceptClientAsync'">
-            <startOffsets>
-              <option value="949" />
-            </startOffsets>
-            <endOffsets>
-              <option value="969" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/DiscountCodeDemo.Server/DiscountCodeTcpServer.cs</url>
-          <line>96</line>
-          <properties documentPath="C:\Users\huber\RiderProjects\DiscountCodeDemo\src\DiscountCodeDemo.Server\DiscountCodeTcpServer.cs" containingFunctionPresentation="Method 'HandleUseCodeRequest'">
-            <startOffsets>
-              <option value="2684" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2709" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Add MessageReader and MessageWriter for custom TCP protocol" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add MessageReader and MessageWriter for custom TCP protocol" />
   </component>
 </project>

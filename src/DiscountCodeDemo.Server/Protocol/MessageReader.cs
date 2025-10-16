@@ -1,48 +1,45 @@
-﻿using System.Buffers.Binary;
-using System.Net.Sockets;
-using DiscountCodeDemo.Server.Protocol.Messages;
+﻿using DiscountCodeDemo.Server.Protocol.Messages;
 
 namespace DiscountCodeDemo.Server.Protocol;
 
 public class MessageReader
 {
-    private readonly NetworkStream _networkStream;
+    private readonly Stream _stream;
 
-    public MessageReader(NetworkStream networkStream)
+    public MessageReader(Stream stream)
     {
-        _networkStream = networkStream;
+        _stream = stream;
     }
 
-    public async Task<(RequestType Type, byte[] Data)> ReadMessageAsync()
+    public async Task<ProtocolMessage?> ReadMessageAsync()
     {
         var header = new byte[3];
-        int bytesRead = 0;
+        int read = 0;
 
-        while (bytesRead < header.Length)
+        while (read < 3)
         {
-            int read = await _networkStream.ReadAsync(header, bytesRead, header.Length - bytesRead);
-
-            if (read == 0)
-                throw new IOException("[Server] Connection closed while reading header");
-
-            bytesRead += read;
+            int n = await _stream.ReadAsync(header, read, 3 - read);
+            if (n == 0) return null;
+            read += n;
         }
 
-        var type = (RequestType)header[0];
-        ushort payloadLength = BinaryPrimitives.ReadUInt16BigEndian(header.AsSpan(1));
+        var command = (RequestType)header[0];
+        var length = BitConverter.ToUInt16(header, 1);
 
-        var payload = new byte[payloadLength];
-        bytesRead = 0;
+        byte[] payload = Array.Empty<byte>();
 
-        while (bytesRead < payloadLength)
+        if (length > 0)
         {
-            int read = await _networkStream.ReadAsync(payload, bytesRead, payloadLength - bytesRead);
-            if (read == 0)
-                throw new IOException("[Server] Connection closed while reading payload");
-
-            bytesRead += read;
+            payload = new byte[length];
+            int bytesRead = 0;
+            while (bytesRead < length)
+            {
+                int n = await _stream.ReadAsync(payload, bytesRead, length - bytesRead);
+                if (n == 0) throw new IOException("Stream closed unexpectedly");
+                bytesRead += n;
+            }
         }
 
-        return (type, payload);
+        return new ProtocolMessage(command, payload);
     }
 }

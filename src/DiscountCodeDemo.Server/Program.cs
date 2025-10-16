@@ -2,6 +2,7 @@
 using DiscountCodeDemo.Core.Interfaces;
 using DiscountCodeDemo.Infrastructure;
 using DiscountCodeDemo.Server;
+using DiscountCodeDemo.Server.Tcp;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 

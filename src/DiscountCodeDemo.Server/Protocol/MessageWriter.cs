@@ -1,38 +1,25 @@
-﻿using System.Buffers.Binary;
-using System.Net.Sockets;
-using System.Text;
-using DiscountCodeDemo.Server.Protocol.Messages;
+﻿using DiscountCodeDemo.Server.Protocol.Messages;
 
 namespace DiscountCodeDemo.Server.Protocol;
 
 public class MessageWriter
 {
-    private readonly NetworkStream _networkStream;
+    private readonly Stream _stream;
 
-    public MessageWriter(NetworkStream networkStream)
+    public MessageWriter(Stream stream)
     {
-        _networkStream = networkStream;
+        _stream = stream;
     }
 
-    public async Task SendMessageAsync(RequestType type, byte[] payload)
+    public async Task WriteMessageAsync(IProtocolMessage message)
     {
+        var payload = message.ToBytes();
         var header = new byte[3];
-        header[0] = (byte)type;
-        BinaryPrimitives.WriteInt32BigEndian(header.AsSpan(1), (ushort)payload.Length);
-        
-        await _networkStream.WriteAsync(header);
-        await _networkStream.WriteAsync(payload);
-    }
+        header[0] = (byte)message.Type;
+        BitConverter.GetBytes((ushort)payload.Length).CopyTo(header, 1);
 
-    public async Task SendBooleanResponseAsync(RequestType type, bool success)
-    {
-        byte[] payload = new[] {success ? (byte)1 : (byte)0};
-        await SendMessageAsync(type, payload);
-    }
-
-    public async Task SendErrorAsync(string errorMessage)
-    {
-        byte[] payload = Encoding.UTF8.GetBytes(errorMessage);
-        await SendMessageAsync(RequestType.Error, payload);
+        await _stream.WriteAsync(header, 0, header.Length);
+        if (payload.Length > 0)
+            await _stream.WriteAsync(payload, 0, payload.Length);
     }
 }

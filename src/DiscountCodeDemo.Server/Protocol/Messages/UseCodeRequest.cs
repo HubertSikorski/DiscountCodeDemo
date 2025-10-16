@@ -1,12 +1,23 @@
-﻿namespace DiscountCodeDemo.Server.Protocol.Messages;
+﻿using System.Text;
+using DiscountCodeDemo.Server.Protocol.Messages;
 
 public class UseCodeRequest : IProtocolMessage
 {
-    public RequestType Type => RequestType.Use;
-    public string Code { get; init; }
+    public string Code { get; set; } = string.Empty;
 
-    public UseCodeRequest(string code)
+    public RequestType Type => RequestType.Use;
+
+    public static UseCodeRequest FromBytes(byte[] payload)
     {
-        Code = code;
+        if (payload.Length != 8)
+            throw new ArgumentException("Invalid payload length for UseCodeRequest");
+
+        string code = Encoding.ASCII.GetString(payload);
+        return new UseCodeRequest { Code = code };
+    }
+
+    public byte[] ToBytes()
+    {
+        return Encoding.ASCII.GetBytes(Code);
     }
 }

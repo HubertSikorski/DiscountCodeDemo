@@ -1,12 +1,21 @@
-﻿namespace DiscountCodeDemo.Server.Protocol.Messages;
+﻿using DiscountCodeDemo.Server.Protocol.Messages;
 
 public class GenerateResponse : IProtocolMessage
 {
-    public RequestType Type => RequestType.Generate;
-    public bool Result { get; set; }
+    public byte Result { get; set; }
 
-    public GenerateResponse(bool result)
+    public RequestType Type => RequestType.Generate;
+
+    public static GenerateResponse FromBytes(byte[] payload)
     {
-        Result = result;
+        if (payload.Length != 1)
+            throw new ArgumentException("Invalid payload length for GenerateResponse");
+
+        return new GenerateResponse { Result = payload[0] };
+    }
+
+    public byte[] ToBytes()
+    {
+        return new[] { Result };
     }
 }

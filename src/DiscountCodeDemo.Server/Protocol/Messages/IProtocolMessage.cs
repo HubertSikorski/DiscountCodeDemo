@@ -3,4 +3,5 @@
 public interface IProtocolMessage
 {
     RequestType Type { get; }
+    byte[] ToBytes();
 }
